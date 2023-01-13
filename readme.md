@@ -1,4 +1,4 @@
-# Three.js Journey
+# Code structuring for bigger projects - Three-js
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).

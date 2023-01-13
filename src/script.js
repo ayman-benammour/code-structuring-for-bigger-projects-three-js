@@ -138,7 +138,7 @@ const experience = new Experience(document.querySelector('canvas.webgl'))
 
 // window.addEventListener('resize', () =>
 // {
-//     // Update sizes
+    // Update sizes
 //     sizes.width = window.innerWidth
 //     sizes.height = window.innerHeight
 

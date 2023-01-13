@@ -12,15 +12,13 @@ export default class Renderer
         this.camera = this.experience.camera
 
         this.setInstance()
-
-        console.log('all good')
     }
 
     setInstance()
     {
         this.instance = new THREE.WebGLRenderer({ 
             canvas: this.canvas,
-            antialias: true})
+            antialias: true })
         this.instance.physicallyCorrectLights = true
         this.instance.outputEncoding = THREE.sRGBEncoding
         this.instance.toneMapping = THREE.CineonToneMapping
@@ -30,7 +28,6 @@ export default class Renderer
         this.instance.setClearColor( 0x211d20, 1 )
         this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
-        console.log('ee')
     }
 
     resize()
