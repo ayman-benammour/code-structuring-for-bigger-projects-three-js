@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import Experience from "./Experience.js"
+import Experience from './Experience.js'
 
 export default class Renderer
 {
@@ -16,16 +16,17 @@ export default class Renderer
 
     setInstance()
     {
-        this.instance = new THREE.WebGLRenderer({ 
+        this.instance = new THREE.WebGLRenderer({
             canvas: this.canvas,
-            antialias: true })
+            antialias: true
+        })
         this.instance.physicallyCorrectLights = true
         this.instance.outputEncoding = THREE.sRGBEncoding
         this.instance.toneMapping = THREE.CineonToneMapping
         this.instance.toneMappingExposure = 1.75
         this.instance.shadowMap.enabled = true
         this.instance.shadowMap.type = THREE.PCFSoftShadowMap
-        this.instance.setClearColor( 0x211d20, 1 )
+        this.instance.setClearColor('#211d20')
         this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
     }

@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import Experience from "./Experience.js"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+import Experience from './Experience.js'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 export default class Camera
 {
@@ -12,7 +12,7 @@ export default class Camera
         this.canvas = this.experience.canvas
 
         this.setInstance()
-        this.setOrbitControls()
+        this.setControls()
     }
 
     setInstance()
@@ -22,7 +22,7 @@ export default class Camera
         this.scene.add(this.instance)
     }
 
-    setOrbitControls()
+    setControls()
     {
         this.controls = new OrbitControls(this.instance, this.canvas)
         this.controls.enableDamping = true

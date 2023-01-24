@@ -1,4 +1,4 @@
-import EventEmitter from "./EventEmitter.js"
+import EventEmitter from './EventEmitter.js'
 
 export default class Sizes extends EventEmitter
 {
@@ -20,6 +20,5 @@ export default class Sizes extends EventEmitter
 
             this.trigger('resize')
         })
-
     }
 }

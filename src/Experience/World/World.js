@@ -14,9 +14,9 @@ export default class World
         // Wait for resources
         this.resources.on('ready', () =>
         {
-            // Set up
+            // Setup
             this.floor = new Floor()
-            this.fox = new Fox
+            this.fox = new Fox()
             this.environment = new Environment()
         })
     }
@@ -24,8 +24,6 @@ export default class World
     update()
     {
         if(this.fox)
-        {
             this.fox.update()
-        }
     }
 }

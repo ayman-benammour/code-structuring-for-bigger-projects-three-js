@@ -1,33 +1,33 @@
 import * as THREE from 'three'
-import Sizes from "./Utils/Sizes.js"
-import Time from "./Utils/Time.js"
+
+import Debug from './Utils/Debug.js'
+import Sizes from './Utils/Sizes.js'
+import Time from './Utils/Time.js'
 import Camera from './Camera.js'
 import Renderer from './Renderer.js'
 import World from './World/World.js'
 import Resources from './Utils/Resources.js'
-import Debug from './Utils/Debug.js'
-import sources from './sources.js'
 
-// console.log(sources)
+import sources from './sources.js'
 
 let instance = null
 
 export default class Experience
 {
-    constructor(canvas)
+    constructor(_canvas)
     {
+        // Singleton
         if(instance)
         {
             return instance
         }
-
         instance = this
-
+        
         // Global access
         window.experience = this
 
         // Options
-        this.canvas = canvas
+        this.canvas = _canvas
 
         // Setup
         this.debug = new Debug()
@@ -39,7 +39,7 @@ export default class Experience
         this.renderer = new Renderer()
         this.world = new World()
 
-        // Sizes resize event
+        // Resize event
         this.sizes.on('resize', () =>
         {
             this.resize()
@@ -70,7 +70,7 @@ export default class Experience
         this.sizes.off('resize')
         this.time.off('tick')
 
-        // Traverse all the scene
+        // Traverse the whole scene
         this.scene.traverse((child) =>
         {
             // Test if it's a mesh
@@ -83,6 +83,7 @@ export default class Experience
                 {
                     const value = child.material[key]
 
+                    // Test if there is a dispose function
                     if(value && typeof value.dispose === 'function')
                     {
                         value.dispose()
@@ -95,8 +96,6 @@ export default class Experience
         this.renderer.instance.dispose()
 
         if(this.debug.active)
-        {
             this.debug.ui.destroy()
-        }
     }
 }

@@ -1,5 +1,4 @@
 export default [
-    // Environment map textures
     {
         name: 'environmentMapTexture',
         type: 'cubeTexture',
@@ -13,18 +12,16 @@ export default [
             'textures/environmentMap/nz.jpg'
         ]
     },
-    // Dirt floor textures
     {
-        name: 'dirtColorTexture',
+        name: 'grassColorTexture',
         type: 'texture',
         path: 'textures/dirt/color.jpg'
     },
     {
-        name: 'dirtNormalTexture',
+        name: 'grassNormalTexture',
         type: 'texture',
         path: 'textures/dirt/normal.jpg'
     },
-    // Fox model
     {
         name: 'foxModel',
         type: 'gltfModel',
